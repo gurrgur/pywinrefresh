@@ -1,4 +1,11 @@
-# Windows IoT Enterprise LTSC 2021 IoT ISO Refresh
+# pyWinRefresh
+
+pyWinRefresh can be used to create a localized and up-to-date W10 IoT Enterprise LTSC 2021 ISO. Currently only german localization is supported.
+
+## Requirements
+
+- Windows 10 virtual machine with chocolatey package manager
+    - It is recommended to use this VM for pyWinRefresh only.
 
 ## Setup
 
