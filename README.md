@@ -1,30 +1,30 @@
 # pyWinRefresh
 
-pyWinRefresh can be used to create a localized and up-to-date W10 IoT Enterprise LTSC 2021 ISO. Currently only german localization is supported.
+pyWinRefresh can be used to create a localized and up-to-date Windows 10 IoT Enterprise LTSC 2021 ISO. Currently only german localization is supported.
+
+## Motivation
+
+Starting October 2025, many Windows 10 editions will ceise to receive any further updates. A viable replacement for this pending deprecation is the Windows 10 IoT Enterprise LTSC 2021 edition, which will receive updates until January 2032. Unfortunetely, the IoT edition ISO is neither updated regularly, nor available in any languages except en-US. pyWinRefresh solves this by searching, downloading and offline-installing recent updates, and adding language support to the IoT ISO.
 
 ## Requirements
 
-- Windows 10 virtual machine with chocolatey package manager
-    - It is recommended to use this VM for pyWinRefresh only.
+- Windows 10 PC with chocolatey package manager.
+    - It is recommended to use a single-purpose virtual machine for pyWinRefresh.
 
 ## Setup
 
-1. Right click `install-1-deps.bat` --> Run as administrator. This will install python, 7zip and Windows ADK
-2. Double click `install-2-venv.bat`. This will install the python dependencies in `_env`. No admin permissions needed here.
-3. Reboot. This is needed for PATH to update properly, so that Windows ADK becomes available from within powershell and python.
+1. Double click `install-1-deps.bat`. This will install python, 7zip and Windows ADK using chocolatey.
+2. Double click `install-2-venv.bat`. This will install the python dependencies into the virtual environment `_env`.
+3. Reboot. This is needed for PATH to update properly, so that Windows ADK becomes available.
 
 ## Usage
 
-1. Put the base Windows LTSC 2021 IOT ISO into the `iso` folder. This has to be done only once.
-2. Double click `run.bat` from Windows Explorer. This will:
+- (optional) Put drivers into `rsc/drivers`. The drivers will be searched recursively in the folder and its subfolders, and installed during the ISO build process.
+- Simply double click `run.bat`. This will:
     - Download the latest updates
     - Extract the base iso
     - Install the updates
     - Build the refreshed iso and save it in `_out`
-
-## Adding Drivers
-
-You can put driver files into `rsc/drivers`. The drivers will be searched recursively in the folder and its subfolders, and installed during the ISO build process.
 
 ## About Windows Offline updates
 
