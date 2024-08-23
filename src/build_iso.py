@@ -174,7 +174,7 @@ if not Path("_out").is_dir():
     Path("_out").mkdir()
 subprocess.run([
     'oscdimg',
-    '-bootdata:1#pEF,e,b_build\\iso_data\\efi\\microsoft\\boot\\efisys.bin',  # boot sector file (UEFI, x64)
+    '-bootdata:2#p0,e,b_build\\iso_data\\boot\\etfsboot.com#pEF,e,b_build\\iso_data\\efi\\microsoft\\boot\\efisys.bin',  # multi-boot (UEFI+legacy)
     '-o',  # optimize
     '-m',  # ignore maximum permitted iso size
     '-u2',  # file system
